@@ -68,17 +68,10 @@ Set your local environment temporarily:
 ```bash
 export GOOGLE_CLIENT_ID="..."
 export GOOGLE_CLIENT_SECRET="..."
-npm run google:oauth-url
+npm run google:oauth-local
 ```
 
-Open the printed URL, approve access, and copy the returned code. Then:
-
-```bash
-export GOOGLE_AUTH_CODE="..."
-npm run google:oauth-exchange
-```
-
-Copy the `refresh_token` from the output.
+Open the printed URL and approve access. The local helper waits for Google's browser redirect and prints the `refresh_token`. Copy the `refresh_token` from the output.
 
 ### 3. Add GitHub Secrets
 
