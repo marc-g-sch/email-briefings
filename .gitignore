@@ -1,0 +1,8 @@
+.DS_Store
+node_modules/
+.env
+data/digests/
+data/**/*.jsonl
+data/linkedin/messages.*
+data/whatsapp/chats/
+

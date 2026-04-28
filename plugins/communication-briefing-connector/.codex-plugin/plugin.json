@@ -1,0 +1,45 @@
+{
+  "name": "communication-briefing-connector",
+  "version": "0.1.0",
+  "description": "Local Codex connector for daily communication briefings across email, LinkedIn exports/API, and WhatsApp exports/webhooks.",
+  "author": {
+    "name": "Marc Schuhbauer",
+    "email": "marc.schuhbauer@gmail.com",
+    "url": "https://localhost"
+  },
+  "homepage": "https://localhost",
+  "repository": "local",
+  "license": "MIT",
+  "keywords": [
+    "briefing",
+    "email",
+    "linkedin",
+    "whatsapp",
+    "calendar"
+  ],
+  "skills": "./skills/",
+  "hooks": "./hooks.json",
+  "mcpServers": "./.mcp.json",
+  "apps": "./.app.json",
+  "interface": {
+    "displayName": "Communication Briefing Connector",
+    "shortDescription": "Builds daily briefings from email, LinkedIn, WhatsApp, and calendar-worthy signals.",
+    "longDescription": "A local connector and MCP server for generating morning and evening communication briefings. Gmail is handled by Codex app tools, while LinkedIn and WhatsApp are supported through legitimate export, webhook, or approved API paths.",
+    "developerName": "Marc Schuhbauer",
+    "category": "Productivity",
+    "capabilities": [
+      "Read",
+      "Summarize",
+      "Automate"
+    ],
+    "websiteURL": "https://localhost",
+    "privacyPolicyURL": "https://localhost/privacy",
+    "termsOfServiceURL": "https://localhost/terms",
+    "defaultPrompt": [
+      "Generate my morning communication briefing.",
+      "Generate my evening communication debrief.",
+      "Check connector status for LinkedIn and WhatsApp."
+    ],
+    "brandColor": "#2563EB"
+  }
+}

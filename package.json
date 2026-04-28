@@ -1,0 +1,16 @@
+{
+  "name": "communication-briefing-connector-workspace",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "briefing:status": "node plugins/communication-briefing-connector/scripts/briefing-cli.js status",
+    "briefing:morning": "node plugins/communication-briefing-connector/scripts/briefing-cli.js digest --mode morning",
+    "briefing:evening": "node plugins/communication-briefing-connector/scripts/briefing-cli.js digest --mode evening",
+    "briefing:webhook": "node plugins/communication-briefing-connector/scripts/briefing-cli.js whatsapp-webhook",
+    "hosted:digest": "node plugins/communication-briefing-connector/scripts/hosted-gmail-digest.js",
+    "google:oauth-url": "node plugins/communication-briefing-connector/scripts/google-oauth-helper.js url",
+    "google:oauth-exchange": "node plugins/communication-briefing-connector/scripts/google-oauth-helper.js exchange",
+    "test": "node plugins/communication-briefing-connector/scripts/briefing-cli.js self-test"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "communication-briefing-connector": {
+      "command": "node",
+      "args": [
+        "./plugins/communication-briefing-connector/scripts/mcp-server.js"
+      ]
+    }
+  }
+}
