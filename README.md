@@ -30,7 +30,7 @@ This is the easiest hosted option because it runs on GitHub's servers even when 
 
 What has already been added:
 
-- `.github/workflows/communication-briefing.yml`
+- `.github/workflows/communication-briefing.yml` locally. GitHub may require you to add this file through the browser or push with a token that has `workflow` scope.
 - `npm run hosted:digest`
 - Google OAuth helper commands
 
@@ -93,6 +93,12 @@ Add:
 - `OPENAI_API_KEY` if you want AI-written summaries instead of the deterministic fallback
 
 ### 4. Run It
+
+Make sure this workflow file exists in GitHub:
+
+- `.github/workflows/communication-briefing.yml`
+
+If GitHub rejected the workflow push with a `workflow` scope error, create that file in the GitHub browser and paste the local file contents from this workspace.
 
 Go to Actions -> Communication Briefing -> Run workflow.
 
