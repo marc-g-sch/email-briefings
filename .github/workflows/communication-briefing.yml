@@ -1,0 +1,43 @@
+name: Communication Briefing
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "Digest mode"
+        required: true
+        default: "auto"
+        type: choice
+        options:
+          - auto
+          - morning
+          - evening
+  schedule:
+    # GitHub cron is UTC and has no timezone/DST support.
+    # Run at both possible Berlin offsets; the script exits unless local time is 08:00 or 20:00.
+    - cron: "0 6,7,18,19 * * *"
+
+jobs:
+  send-briefing:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+
+      - name: Send briefing
+        env:
+          GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
+          GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
+          GOOGLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_REFRESH_TOKEN }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          DIGEST_TO: ${{ secrets.DIGEST_TO }}
+          DIGEST_TIMEZONE: Europe/Berlin
+          DIGEST_MODE: ${{ github.event.inputs.mode || 'auto' }}
+        run: npm run hosted:digest -- --mode "$DIGEST_MODE"
+
